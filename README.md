@@ -4,7 +4,7 @@ This is my personal portfolio website built using HTML, CSS, and JavaScript. It 
 
 ## 🔗 Live Site
 
-[Click here to view my portfolio](https://varshat14.github.io/portfolio-site)
+[Click here to view my portfolio](https://varshat14.github.io/Portfolio)
 
 ## 🛠️ Technologies Used
 
