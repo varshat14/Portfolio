@@ -34,7 +34,7 @@
     }
   
   :root {
-    --bg: #f3e9dc;
+    --bg:  #f3e9dc;
     --text: #3e2723;
     --card: #fffaf5;
     --accent: #8d6e63;
@@ -254,6 +254,29 @@
     margin: auto;
     text-align: left;
   }
+
+
+  /* ===== Resume Button ===== */
+.resume-btn {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.6rem 1.4rem;
+  background-color: #c77f50;
+  color: #fffaf2;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(199, 127, 80, 0.3);
+}
+
+.resume-btn:hover {
+  background-color: #5d4037;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(93, 64, 55, 0.3);
+}
   /* === Responsive === */
   @media (max-width: 768px) {
     .nav-links {
@@ -337,81 +360,57 @@
     100% { transform: translate(0, 0) scale(1); }
   }
   
-  #skills {
-    padding: 4rem 1rem;
-    text-align: center;
-    z-index: 5;
-    position: relative;
-  }
-  
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    color: #5d4037;
-    margin-bottom: 0.5rem;
-  }
-  
-  .section-subtitle {
-    font-family: 'Inter', sans-serif;
-    color: #6e5846;
-    margin-bottom: 2rem;
-    font-size: 1rem;
-  }
-  
-  .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3rem;
-    text-align: left;
-  }
-  
-  .skill-category {
-    flex: 1 1 300px;
-    max-width: 500px;
-  }
-  
-  .skill-category h2 {
-    font-size: 1.3rem;
-    color: #4e342e;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid #d7bba8;
-    display: inline-block;
-    padding-bottom: 5px;
-  }
-  
-  .skill-bar {
-    margin-bottom: 1.25rem;
-  }
-  
-  .skill-bar span {
-    display: inline-block;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    color: #333;
-  }
-  
-  .bar {
-    height: 6px;
-    background: #ccc;
-    border-radius: 3px;
-    overflow: hidden;
-    margin: 0.5rem 0;
-    position: relative;
-  }
-  
-  .fill {
-    height: 100%;
-    background: #a97c61;
-    border-radius: 3px;
-    transition: width 1s ease;
-  }
-  
-  .percent {
-    float: right;
-    font-size: 0.9rem;
-    color: #5d4037;
-  }
+ /* Skills Section */
+#skills {
+  padding: 50px 10%;
+  background:  #faf3e9;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.skill-category {
+  background:  #f3e9dc;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.skill-category h2 {
+  color: #3b3b3b;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.skill-category p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 
   #projects {
     color: var(--text);
@@ -492,7 +491,7 @@
 
 #certificates {
     padding: 4rem 2rem;
-    background-color: #f5f0e6;
+    background-color:  #f3e9dc;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -506,103 +505,135 @@
     color: #4b2e2e;
     margin-bottom: 3rem;
   }
-  
-  /* Scrollable Timeline */
-  .timeline-container {
-    display: flex;
-    gap: 2rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 2rem;
-    padding-bottom: 2rem;
-    position: relative;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  .timeline-container::-webkit-scrollbar {
-    height: 8px;
-  }
-  
-  .timeline-container::-webkit-scrollbar-thumb {
-    background: #c7a27c;
-    border-radius: 4px;
-  }
-  
-  .timeline-container::-webkit-scrollbar-track {
-    background: #f5f0e6;
-  }
-  
-  /* Certificate Card */
-  .timeline-item {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    background-color: #fff9f0;
-    border: 1px solid #d9cbb0;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(74, 54, 24, 0.15);
-    padding: 1.5rem;
-    min-width: 260px;
-    max-width: 280px;
-    position: relative;
-    font-family: 'Inter', sans-serif;
-    color: #3e2c2c;
-    text-align: left;
-  }
-  
-  /* Dot on Card */
-  .timeline-item .dot {
-    width: 14px;
-    height: 14px;
-    background-color: #a47148;
-    border: 3px solid #fff9f0;
-    border-radius: 50%;
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-  }
-  
-  /* Headings and Text */
-  .timeline-item h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: #4b2e2e;
-    margin-bottom: 0.5rem;
-  }
-  
-  .timeline-item h4 {
-    font-size: 1rem;
-    color: #5d4037;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  
-  .timeline-item p {
-    font-size: 0.9rem;
-    color: #6e4a3a;
-    margin-bottom: 1rem;
-  }
-  
-  /* View Certificate Button */
-  .timeline-item a.view-btn {
-    display: inline-block;
-    padding: 0.4rem 0.9rem;
-    background-color: #c77f50;
-    color: #fffaf2;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 6px rgba(199, 127, 80, 0.3);
-  }
-  
-  .timeline-item a.view-btn:hover {
-    background-color: #5d4037;
-    color: #fff;
-  }
+  /* ===== Certificates Section ===== */
+#certificates {
+  padding: 80px 10%;
+  background-color:  #f3e9dc;
+  text-align: center;
+}
+
+#certificates .section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #3b2a1f;
+  margin-bottom: 30px;
+  font-family: "Playfair Display", serif;
+}
+
+/* Scrollable Timeline */
+.timeline-container {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 2rem;
+  padding: 1rem 2rem 2rem 2rem;
+  position: relative;
+}
+
+.timeline-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.timeline-container::-webkit-scrollbar-thumb {
+  background:  #decfba;
+  border-radius: 4px;
+}
+
+.timeline-container::-webkit-scrollbar-track {
+  background:  #64594b;
+}
+
+/* Certificate Card */
+.timeline-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background-color:  #f3e9dc;
+  border: 1px solid #d9cbb0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(74, 54, 24, 0.15);
+  padding: 1.5rem;
+  min-width: 260px;
+  max-width: 280px;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #3e2c2c;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(74, 54, 24, 0.25);
+}
+
+/* Dot on Card */
+.timeline-item .dot {
+  width: 14px;
+  height: 14px;
+  background-color:  #f3e9dc;
+  border: 3px solid #fff9f0;
+  border-radius: 50%;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Headings and Text */
+.timeline-item h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: #4b2e2e;
+  margin-bottom: 0.4rem;
+}
+
+.timeline-item h4 {
+  font-size: 1rem;
+  color: #5d4037;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+  font-size: 0.9rem;
+  color: #6e4a3a;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* View Certificate Button */
+.timeline-item a.view-btn {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  background-color: #c77f50;
+  color: #fffaf2;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(199, 127, 80, 0.3);
+}
+
+.timeline-item a.view-btn:hover {
+  background-color: #5d4037;
+  color: #fff;
+}
+
+/* Bullet list for skill programs */
+.timeline-item ul.bullet-list {
+  list-style-type: disc;
+  margin-left: 1.2rem;
+  color: #6e4a3a;
+  line-height: 1.6;
+}
+
+.timeline-item ul.bullet-list li {
+  margin-bottom: 0.3rem;
+}
+
   
   /* === RESPONSIVE === */
   @media (max-width: 768px) {
@@ -636,7 +667,7 @@
   }
   
   .education-card {
-    background: #fff;
+    background:  #f3e9dc;
     padding: 1rem;
     border-left: 4px solid #8B5E3C;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
